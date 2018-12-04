@@ -4,6 +4,7 @@
   "description": "Coding challenge - backend",
   "main": "server.js",
   "dependencies": {
+    "body-parser": "^1.18.3",
     "cors": "^2.8.5",
     "express": "^4.16.4",
     "express-rate-limit": "^3.3.2",
