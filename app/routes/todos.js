@@ -17,6 +17,9 @@ router.route('/active')
 router.route('/:id')
     .get(todos.getSingle);
 
+router.route('/:id')
+    .put(todos.changeToArchived);
+
 // router.route('/todos/')
 //     .put(todos.sendToArchive);
 
