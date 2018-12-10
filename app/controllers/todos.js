@@ -8,11 +8,17 @@ module.exports = {
         })
     },
     postNewToDo: (req, res) => {
-        let query = 'INSERT INTO `todo`.`todos` (title, body) VALUES ("' + req.body.title + '","' + req.body.body + '");';
-        db.query(query, (err) => {
+        if(req.body.title!=="" && req.body.body!==""){
+            let query = 'INSERT INTO `todo`.`todos` (title, body) VALUES ("' + req.body.title + '","' + req.body.body + '");';
+
+            db.query(query, (err) => {
             if (err) throw err;
             res.send("Inserted into database");
-        })
+            })
+        }else{
+            res.send("Title and Body fields cannot be empty")
+        }
+        
     },
     getArchived: (req, res) => {
         let query = "SELECT * FROM `todo`.`todos` WHERE status='archived'";
