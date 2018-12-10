@@ -13,10 +13,10 @@ module.exports = {
 
             db.query(query, (err) => {
             if (err) throw err;
-            res.send("Inserted into database");
+            res.sendStatus(200);
             })
         }else{
-            res.send("Title and Body fields cannot be empty")
+            res.sendStatus(400);
         }
         
     },

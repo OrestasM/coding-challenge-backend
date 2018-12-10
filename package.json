@@ -5,6 +5,7 @@
   "main": "server.js",
   "dependencies": {
     "body-parser": "^1.18.3",
+    "config": "^3.0.0",
     "cors": "^2.8.5",
     "express": "^4.16.4",
     "express-rate-limit": "^3.3.2",
@@ -12,10 +13,14 @@
     "mysql": "^2.16.0",
     "nodemon": "^1.18.7"
   },
-  "devDependencies": {},
+  "devDependencies": {
+    "chai": "^4.2.0",
+    "chai-http": "^4.2.0",
+    "mocha": "^5.2.0"
+  },
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "node server.js"
+    "test": "mocha",
+    "start": "SET NODE_ENV=dev && node server.js"
   },
   "repository": {
     "type": "git",
